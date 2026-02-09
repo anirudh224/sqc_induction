@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Super Quant Coders | Induction Day 2026 – Thank You All!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #00eaff;
+      --accent: #ff00aa;
+      --dark: #0b001f;
+      --darker: #050012;
+      --glow: rgba(0, 234, 255, 0.7);
+      --text: #e0f7ff;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background: var(--darker);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(10,0,40,0.85), rgba(5,0,20,1)),
+                  url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1600') center/cover fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .welcome-message {
+      font-size: 2.8rem;
+      color: var(--accent);
+      margin: 1.5rem 0 1rem;
+      text-shadow: 0 0 30px var(--accent);
+      animation: pulse 3s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.7; }
+      to   { opacity: 1; }
+    }
+
+    .edition {
+      font-size: 1.9rem;
+      color: #00ff9d;
+      margin-top: 1rem;
+    }
+
+    .floating-achievement {
+      position: absolute;
+      top: 12%;
+      right: 8%;
+      width: 220px;
+      filter: drop-shadow(0 0 40px var(--primary));
+      animation: float 7s ease-in-out infinite;
+      z-index: 10;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(4deg); }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 7rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent), #00ff9d);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 60px var(--glow);
+    }
+
+    .tagline {
+      font-size: 2.2rem;
+      margin-top: 1.5rem;
+      letter-spacing: 3px;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: rgba(10,0,40,0.85);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      padding: 1.4rem;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0,234,255,0.2);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      transition: all 0.4s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      text-shadow: 0 0 20px var(--accent);
+      transform: scale(1.08);
+    }
+
+    section {
+      padding: 10rem 5%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4.5rem;
+      text-align: center;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 4rem;
+    }
+
+    .thank-you-banner {
+      background: linear-gradient(135deg, #ff0066, #00ccff);
+      color: #000;
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin: 4rem 0 0;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.6);
+    }
+
+    .thank-you-banner span {
+      font-size: 1.4rem;
+      display: block;
+      margin-top: 1rem;
+      opacity: 0.9;
+    }
+
+    /* Rest of your existing styles for grid, cards, modal, etc. remain unchanged */
+    .achievements-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin: 4rem 0; }
+    .achievement-card { background: rgba(20,0,60,0.5); border-radius: 16px; padding: 2rem; text-align: center; border: 2px solid rgba(0,234,255,0.3); transition: all 0.4s; }
+    .achievement-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 0 50px rgba(255,0,170,0.4); }
+    .achievement-card img { width: 100%; max-height: 220px; object-fit: contain; margin-bottom: 1.5rem; filter: drop-shadow(0 0 20px var(--primary)); }
+
+    .members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+    .member-card { background: rgba(20,0,60,0.6); border-radius: 20px; overflow: hidden; border: 2px solid rgba(0,234,255,0.3); transition: all 0.5s ease; cursor: pointer; backdrop-filter: blur(6px); }
+    .member-card:hover { transform: translateY(-15px); border-color: var(--accent); box-shadow: 0 0 60px rgba(255,0,170,0.5); }
+    .member-card img { width: 100%; height: 380px; object-fit: cover; transition: all 0.6s; }
+    .member-card:hover img { transform: scale(1.08); filter: brightness(1.2) contrast(1.15); }
+    .member-info { padding: 2rem; text-align: center; }
+    .member-info h3 { color: var(--primary); font-size: 2rem; margin-bottom: 0.8rem; }
+    .member-info .role { color: var(--accent); font-size: 1.3rem; font-weight: 600; }
+
+    .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.94); backdrop-filter: blur(12px); z-index: 2000; justify-content: center; align-items: center; padding: 2rem; }
+    .modal-content { background: linear-gradient(135deg, rgba(15,0,50,0.92), rgba(8,0,30,0.95)); border-radius: 24px; border: 3px solid var(--primary); max-width: 900px; width: 100%; overflow: hidden; box-shadow: 0 0 120px rgba(0,234,255,0.4); animation: modalAppear 0.6s ease-out; }
+    @keyframes modalAppear { from { opacity: 0; transform: scale(0.85) translateY(60px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .modal-header { position: relative; }
+    .modal-header img { width: 100%; height: 480px; object-fit: cover; border-bottom: 5px solid var(--accent); }
+    .close-btn { position: absolute; top: 20px; right: 25px; font-size: 3.5rem; color: var(--primary); cursor: pointer; transition: all 0.3s; }
+    .close-btn:hover { color: var(--accent); transform: rotate(90deg); }
+    .modal-body { padding: 3rem 3.5rem; }
+    .modal-body h2 { font-size: 3.2rem; margin-bottom: 0.5rem; text-align: center; }
+    .modal-body .role { font-size: 1.6rem; color: var(--accent); text-align: center; margin-bottom: 2rem; }
+    .achievements-list { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0; }
+    .mini-achievement { width: 90px; text-align: center; }
+    .mini-achievement img { width: 100%; border-radius: 12px; border: 2px solid var(--primary); box-shadow: 0 0 20px rgba(0,234,255,0.4); }
+    .mini-achievement p { font-size: 0.9rem; margin-top: 0.5rem; color: var(--primary); }
+    .detail-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem 2.5rem; font-size: 1.2rem; margin-bottom: 2.5rem; }
+    .detail-grid strong { color: var(--primary); }
+    .bio { font-size: 1.25rem; line-height: 1.8; background: rgba(255,255,255,0.04); padding: 2rem; border-radius: 16px; border: 1px solid rgba(0,234,255,0.2); }
+
+    @media (max-width: 768px) {
+      .detail-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 5rem; }
+      .welcome-message { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <img src="https://images.stockcake.com/public/2/b/2/2b21ba58-9193-4c74-a07f-1d1e624c0955/neon-cyber-hound-stockcake.jpg" alt="Quantum Fang - Elite Guardian" class="floating-achievement">
+    <h1>SUPER QUANT CODERS</h1>
+    <div class="welcome-message">WELCOME ALL NEW LEGENDS!</div>
+    <p class="tagline">Quant Mastery • Code Supremacy • Robotic Dog Achievements Unlocked</p>
+    <div class="edition">Induction Day Edition – February 9, 2026<br>Thank You for Participating!</div>
+  </header>
+
+  <section id="achievements">
+    <h2>Robotic Dog Achievement Tiers</h2>
+    <p style="text-align:center; font-size:1.4rem; max-width:900px; margin:0 auto 4rem;">
+      Today we celebrate your first steps toward unlocking these powerful cybernetic guardians.
+    </p>
+
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <img src="https://thumbs.dreamstime.com/b/cybernetic-canine-futuristic-robot-dog-motion-sleek-chrome-runs-across-grey-background-its-glowing-blue-lights-highlight-358075176.jpg" alt="Neophyte Hound">
+        <h3>Neophyte Hound</h3>
+        <p>Entry-level: Complete first live backtest</p>
+      </div>
+      <!-- other achievement cards remain the same -->
+      <div class="achievement-card">
+        <img src="https://thumbs.dreamstime.com/b/d-rendering-futuristic-mean-looking-robot-dog-dark-background-d-rendering-futuristic-robot-dog-117630892.jpg" alt="Quantum Predator">
+        <h3>Quantum Predator</h3>
+        <p>Mid-tier: Deploy profitable strategy in sim</p>
+      </div>
+      <div class="achievement-card">
+        <img src="https://images.stockcake.com/public/e/8/d/e8df32a2-b956-423a-bd11-fff43ae579bb/neon-cyber-canine-stockcake.jpg" alt="Neon Sentinel">
+        <h3>Neon Sentinel</h3>
+        <p>Advanced: Win internal quant competition</p>
+      </div>
+      <div class="achievement-card">
+        <img src="https://media.craiyon.com/2025-07-19/BFCoWVmCQ5iA9pXPF3J-aQ.webp" alt="Apex Cyberwolf">
+        <h3>Apex Cyberwolf</h3>
+        <p>Elite: Live profitable HFT / ML model</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Our Elite Coders</h2>
+    <div class="members-grid">
+
+      <div class="member-card" onclick="showProfile('vikramjeet')">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop" alt="Vikramjeet">
+        <div class="member-info">
+          <h3>Vikramjeet</h3>
+          <p class="role">Founder & Lead Quant Architect</p>
+        </div>
+      </div>
+
+      <div class="member-card" onclick="showProfile('akshit')">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=800&fit=crop" alt="Akshit">
+        <div class="member-info">
+          <h3>Akshit</h3>
+          <p class="role">High-Frequency Trading Lead</p>
+        </div>
+      </div>
+
+      <div class="member-card" onclick="showProfile('bhumika')">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=800&fit=crop" alt="Bhumika">
+        <div class="member-info">
+          <h3>Bhumika</h3>
+          <p class="role">AI & Machine Learning Quant</p>
+        </div>
+      </div>
+
+      <div class="member-card" onclick="showProfile('rohan')">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=800&fit=crop" alt="Rohan">
+        <div class="member-info">
+          <h3>Rohan</h3>
+          <p class="role">Risk & Backtesting Specialist</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal remains the same -->
+
+  <div class="thank-you-banner">
+    THANK YOU TO EVERYONE FOR PARTICIPATING IN INDUCTION DAY 2026!<br>
+    <span>Your energy, ideas, and passion made today legendary. Welcome to the pack – let's code the future together!</span>
+  </div>
+
+  <!-- Your existing modal HTML and JavaScript code goes here (unchanged) -->
+
+  <script>
+    // Your existing profiles object and showProfile/closeProfile functions
+    // Just make sure the IDs match the onclick values (akshit, bhumika, etc.)
+    const profiles = {
+      vikramjeet: { /* ... your data ... */ },
+      akshit: { name: "Akshit", /* ... */ },
+      bhumika: { name: "Bhumika", /* ... */ },
+      rohan: { /* ... */ }
+    };
+
+    // Rest of your script (showProfile, closeProfile, window.onclick)
+  </script>
+
+</body>
+</html>
